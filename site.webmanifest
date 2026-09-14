@@ -1,0 +1,18 @@
+{
+  "name": "Kingdom 3981",
+  "short_name": "K3981",
+  "description": "Public Kingdom 3981 hub for rankings, Bauler Runs, and alerts.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#171412",
+  "theme_color": "#8b2d32",
+  "icons": [
+    {
+      "src": "./assets/img/reaper-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

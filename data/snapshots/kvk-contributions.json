@@ -1,0 +1,62 @@
+{
+  "dataset": "kvk-contributions",
+  "mode": "demo",
+  "demo": true,
+  "status": "valid",
+  "source": {
+    "tab": "KvK Contributions",
+    "asOf": "Demo placeholder",
+    "trackingPeriod": "Fictitious KvK period"
+  },
+  "sync": {
+    "lastSuccessAt": null,
+    "lastAttemptAt": null,
+    "staleAfterHours": 26,
+    "failures": []
+  },
+  "headers": [
+    "Governor ID",
+    "Player",
+    "Alliance",
+    "KvK Period",
+    "Kill Points",
+    "Deaths",
+    "Honor Points",
+    "Notes"
+  ],
+  "rows": [
+    {
+      "Governor ID": "000398100001",
+      "Player": "Demo Zero",
+      "Alliance": "GRIM",
+      "KvK Period": "Demo KvK",
+      "Kill Points": "12,500,000",
+      "Deaths": "125,000",
+      "Honor Points": "88,200",
+      "Notes": "Fictitious row"
+    },
+    {
+      "Governor ID": "000398100004",
+      "Player": "LongNameGovernorWithNoSpaces",
+      "Alliance": "GR2",
+      "KvK Period": "Demo KvK",
+      "Kill Points": "0",
+      "Deaths": "",
+      "Honor Points": "40,000",
+      "Notes": "Blank death value is intentional"
+    },
+    {
+      "Governor ID": "000398100005",
+      "Player": "Nia Star",
+      "Alliance": "GRIM",
+      "KvK Period": "Demo KvK",
+      "Kill Points": "2.5%",
+      "Deaths": "1,000",
+      "Honor Points": "7,500",
+      "Notes": "Percent sorting is supported when configured"
+    }
+  ],
+  "warnings": [
+    "Demo rows are fictitious and must not be treated as live contributions."
+  ]
+}

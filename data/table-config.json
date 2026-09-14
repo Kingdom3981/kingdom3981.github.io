@@ -1,0 +1,56 @@
+{
+  "tables": {
+    "fort-rankings": {
+      "title": "Fort Rankings",
+      "primaryPlayerColumn": "Player",
+      "idColumn": "Governor ID",
+      "rankMetric": null,
+      "defaultSort": {
+        "column": "Rank",
+        "direction": "asc"
+      },
+      "columnOrder": [],
+      "labels": {},
+      "types": {
+        "Rank": "number",
+        "Governor ID": "text",
+        "Fort Helps": "number"
+      },
+      "hiddenColumns": [],
+      "publicExcludedColumns": [],
+      "filters": {
+        "allianceColumn": "Alliance",
+        "periodColumn": "Reset Period"
+      }
+    },
+    "kvk-contributions": {
+      "title": "KvK Contributions",
+      "primaryPlayerColumn": "Player",
+      "idColumn": "Governor ID",
+      "rankMetric": null,
+      "defaultSort": {
+        "column": "Kill Points",
+        "direction": "desc"
+      },
+      "columnOrder": [],
+      "labels": {},
+      "types": {
+        "Governor ID": "text",
+        "Kill Points": "number",
+        "Deaths": "number",
+        "Honor Points": "number"
+      },
+      "hiddenColumns": [],
+      "publicExcludedColumns": [],
+      "filters": {
+        "allianceColumn": "Alliance",
+        "periodColumn": "KvK Period"
+      },
+      "optionalMappings": {
+        "startingValues": {},
+        "currentValues": {},
+        "differences": {}
+      }
+    }
+  }
+}

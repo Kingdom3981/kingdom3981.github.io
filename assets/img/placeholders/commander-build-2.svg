@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" role="img" aria-labelledby="title desc">
+  <title id="title">Commander build placeholder 2</title>
+  <desc id="desc">Clearly labelled placeholder for commander pairing and talent build image.</desc>
+  <rect width="820" height="520" rx="22" fill="#171412"/>
+  <rect x="30" y="30" width="760" height="460" rx="18" fill="#201c19" stroke="#756958" stroke-width="3"/>
+  <path d="M130 120h230v170H130z" fill="#342d29" stroke="#b8aa8f" stroke-width="5"/>
+  <path d="M174 160h142M174 206h94M174 252h126" stroke="#d7c7a1" stroke-width="14" stroke-linecap="round"/>
+  <path d="M472 113c95 39 139 92 132 159-62-41-111-34-147 21 1-75 6-134 15-180Z" fill="#8b2d32" opacity=".86"/>
+  <text x="410" y="388" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="800" fill="#f2e6cf">BUILD PLACEHOLDER</text>
+  <text x="410" y="432" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#d7c7a1">March 2 image slot</text>
+</svg>

@@ -1,0 +1,11 @@
+Section,Enabled,Label,UTC Time,Text,Title,Description,Image Path,Caption,March,Note,Alt Text
+run,TRUE,Daily Run 1,13:00,,,,,,,"Fictitious demo time. Replace before live.",
+run,TRUE,Daily Run 2,21:00,,,,,,,"Fictitious demo time. Replace before live.",
+instruction,TRUE,,,"Demo placeholder: meet at the marked start point before the call.",,,,,,
+instruction,TRUE,,,"Demo placeholder: follow kingdom leadership instructions in voice or Discord.",,,,,,
+reward,TRUE,,,,Potential speedups,"Placeholder estimate only. Replace with kingdom-verified reward notes.",,,,,
+reward,TRUE,,,,Potential resources,"Placeholder estimate only. Actual results vary and are not guaranteed.",,,,,
+route,TRUE,,,,,,"./assets/img/placeholders/bauler-route-placeholder.svg","Route map placeholder. Replace this file path when the real route image is ready.",,,"Clearly labelled placeholder route map for Bauler Runs"
+build,TRUE,,,,,,"./assets/img/placeholders/commander-build-1.svg","Commander pairing placeholder",March 1,"Replace with the recommended commander pairing and talent image.","Clearly labelled placeholder for first commander pairing and talent build"
+build,TRUE,,,,,,"./assets/img/placeholders/commander-build-2.svg","Commander pairing placeholder",March 2,"Replace with the recommended commander pairing and talent image.","Clearly labelled placeholder for second commander pairing and talent build"
+build,TRUE,,,,,,"./assets/img/placeholders/commander-build-3.svg","Commander pairing placeholder",March 3,"Replace with the recommended commander pairing and talent image.","Clearly labelled placeholder for third commander pairing and talent build"

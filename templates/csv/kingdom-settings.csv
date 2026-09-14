@@ -1,0 +1,13 @@
+Key,Value,Required,Notes
+migrationStatus,Closed,Yes,"Live value must be exactly Open or Closed. Closed is the demo default only."
+currentSeed,Seed D,Yes,
+targetSeed,Seed D,Yes,
+discordUrl,,No,"Leave blank until the real invite URL is ready."
+homepageIntro,A polished public hub for Kingdom 3981 members and prospective migrants.,No,
+whatWeOffer,"Fixed MGE during off-season
+Fixed 20 GH events during off-season
+Contribution-based rewards
+1+1 fort bot",Yes,"Use line breaks or pipes between items."
+whoWereLookingFor,"Rally leaders
+Garrison leaders
+Warriors",Yes,"Use line breaks or pipes between items."
