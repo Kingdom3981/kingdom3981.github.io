@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kingdom 3981</title>
-    <meta name="description" content="Public Kingdom 3981 hub for migration status, Bauler Runs, rankings, and alerts.">
-    <meta name="theme-color" content="#8b2d32">
+    <meta name="description" content="Kingdom 3981 migration, rankings, Bauler Runs, and alerts.">
+    <meta name="theme-color" content="#2563eb">
     <link rel="manifest" href="./site.webmanifest">
     <link rel="icon" href="./assets/img/reaper-mark.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./assets/css/styles.css">
@@ -30,68 +30,32 @@
     </header>
 
     <main class="page-shell">
-      <section class="hero">
-        <div>
-          <div class="eyebrow">Grim Reapers alliance hub</div>
+      <section class="hero home-hero">
+        <div class="hero-copy">
           <h1>Kingdom 3981</h1>
-          <p class="lead" id="home-intro">Public kingdom information for members and prospective migrants.</p>
-          <div class="facts" aria-label="Kingdom facts">
-            <div class="fact">
-              <span>Migration</span>
-              <strong id="migration-status">Migration: Loading</strong>
-            </div>
-            <div class="fact">
-              <span>Current seed</span>
-              <strong id="current-seed">Current seed: Seed D</strong>
-            </div>
-            <div class="fact">
-              <span>Target seed</span>
-              <strong id="target-seed">Target seed: Seed D</strong>
-            </div>
-          </div>
+          <p class="migration-pill" id="migration-status">Migration: Loading</p>
           <div class="hero-actions">
-            <a class="button primary" id="discord-link" href="#" aria-disabled="true">Join our Discord</a>
+            <a class="button primary" id="discord-link" href="#" aria-disabled="true">Discord</a>
             <a class="button" href="#alerts">Enable kingdom alerts</a>
           </div>
-          <div id="home-demo-banner"></div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <img src="./assets/img/reaper-mark.svg" alt="">
         </div>
       </section>
 
-      <section class="section">
-        <div class="grid two">
-          <div>
-            <div class="section-head">
-              <h2>What We Offer</h2>
-            </div>
-            <ul class="list" id="offer-list"></ul>
-          </div>
-          <div>
-            <div class="section-head">
-              <h2>Who We're Looking For</h2>
-            </div>
-            <ul class="list" id="looking-list"></ul>
-          </div>
-        </div>
+      <section class="section feature-section" aria-label="Kingdom strengths">
+        <div class="feature-grid" id="offer-list"></div>
       </section>
 
-      <section class="section">
+      <section class="section looking-section">
         <div class="section-head">
-          <h2>Kingdom Pages</h2>
+          <h2>What We're Looking For</h2>
         </div>
-        <div class="quick-links">
-          <a href="./bauler-runs.html">Bauler Runs <span>Daily run schedule, route, rewards, and build placeholders</span></a>
-          <a href="./fort-rankings.html">Fort Rankings <span>Public dynamic rankings table</span></a>
-          <a href="./kvk-contributions.html">KvK Contributions <span>KvK-earned contribution data without invented scores</span></a>
-        </div>
+        <div class="role-grid" id="looking-list"></div>
       </section>
 
       <section class="section" id="alerts">
         <div class="section-head">
           <h2>Kingdom Alerts</h2>
-          <p>Choose notification preferences, then enable alerts from your browser.</p>
+          <p>Choose what you want to receive, then enable alerts from your browser.</p>
         </div>
         <div class="card alert-panel" data-alert-panel></div>
       </section>

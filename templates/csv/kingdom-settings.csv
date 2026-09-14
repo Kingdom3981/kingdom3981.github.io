@@ -1,9 +1,9 @@
 Key,Value,Required,Notes
-migrationStatus,Closed,Yes,"Live value must be exactly Open or Closed. Closed is the demo default only."
+migrationStatus,Open,Yes,"Live value must be exactly Open or Closed."
 currentSeed,Seed D,Yes,
 targetSeed,Seed D,Yes,
 discordUrl,,No,"Leave blank until the real invite URL is ready."
-homepageIntro,A polished public hub for Kingdom 3981 members and prospective migrants.,No,
+homepageIntro,,No,
 whatWeOffer,"Fixed MGE during off-season
 Fixed 20 GH events during off-season
 Contribution-based rewards
