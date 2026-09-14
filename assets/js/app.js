@@ -4,8 +4,6 @@ import { renderAlertPanels } from "./notifications.js";
 import {
   createEl,
   loadJson,
-  renderDemoBanner,
-  renderNotices,
   requireLiveOrDemo,
   setupNavigation,
   validMigrationStatus
@@ -17,11 +15,8 @@ renderAlertPanels();
 loadHome();
 
 async function loadHome() {
-  const banner = document.querySelector("#home-demo-banner");
   try {
     const snapshot = await loadJson(SITE_CONFIG.data.settings);
-    renderDemoBanner(banner, snapshot);
-    renderNotices(banner, snapshot.warnings || []);
 
     if (!requireLiveOrDemo(snapshot)) {
       renderUnavailable();
@@ -29,20 +24,16 @@ async function loadHome() {
     }
 
     const settings = snapshot.settings || {};
-    document.querySelector("#home-intro").textContent = settings.homepageIntro || "";
 
     const migration = settings.migrationStatus;
     const migrationNode = document.querySelector("#migration-status");
     if (validMigrationStatus(migration)) {
       migrationNode.textContent = `Migration: ${migration}`;
-      migrationNode.className = migration === "Open" ? "status-open" : "status-closed";
+      migrationNode.className = `migration-pill ${migration === "Open" ? "status-open" : "status-closed"}`;
     } else {
       migrationNode.textContent = "Migration: Configuration required";
-      migrationNode.className = "status-unknown";
+      migrationNode.className = "migration-pill status-unknown";
     }
-
-    document.querySelector("#current-seed").textContent = `Current seed: ${settings.currentSeed || "Seed D"}`;
-    document.querySelector("#target-seed").textContent = `Target seed: ${settings.targetSeed || "Seed D"}`;
 
     renderList("#offer-list", settings.whatWeOffer || []);
     renderList("#looking-list", settings.whoWereLookingFor || []);
@@ -53,31 +44,44 @@ async function loadHome() {
 }
 
 function renderList(selector, items) {
-  const list = document.querySelector(selector);
-  list.replaceChildren(...items.map((item) => createEl("li", { text: item })));
+  const container = document.querySelector(selector);
+  const isOfferGrid = selector === "#offer-list";
+  const className = isOfferGrid ? "feature-tile" : "role-tile";
+  container.replaceChildren(
+    ...items.map((item) => {
+      const content = isOfferGrid ? splitOffer(item) : { title: item, subtitle: "" };
+      return createEl("div", { class: className }, [
+        createEl("span", { class: "tile-mark", "aria-hidden": "true" }),
+        createEl("span", { class: "tile-copy" }, [
+          createEl("strong", { class: isOfferGrid ? "feature-title" : "role-title", text: content.title }),
+          content.subtitle ? createEl("span", { class: "feature-kicker", text: content.subtitle }) : null
+        ])
+      ]);
+    })
+  );
+}
+
+function splitOffer(item) {
+  const value = String(item);
+  if (value === "Fixed MGE during off-season") return { title: "Fixed MGE", subtitle: "off-season" };
+  if (value === "Fixed 20 GH events during off-season") return { title: "Fixed 20 GH", subtitle: "off-season" };
+  return { title: value, subtitle: "" };
 }
 
 function renderDiscord(url) {
   const link = document.querySelector("#discord-link");
   if (!url) {
-    link.textContent = "Discord unavailable";
+    link.textContent = "Discord";
     link.setAttribute("aria-disabled", "true");
     link.addEventListener("click", (event) => event.preventDefault());
     return;
   }
-  link.textContent = "Join our Discord";
+  link.textContent = "Discord";
   link.href = url;
   link.removeAttribute("aria-disabled");
 }
 
 function renderUnavailable() {
-  const banner = document.querySelector("#home-demo-banner");
-  banner.replaceChildren(
-    createEl("div", { class: "notice", "data-tone": "danger", role: "status" }, [
-      createEl("p", {
-        text:
-          "Live mode is enabled, but no valid live kingdom settings snapshot is available. Demo data is not being used as a fallback."
-      })
-    ])
-  );
+  document.querySelector("#migration-status").textContent = "Migration: Unavailable";
+  document.querySelector("#migration-status").className = "migration-pill status-unknown";
 }

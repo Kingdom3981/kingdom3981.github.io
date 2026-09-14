@@ -1,4 +1,4 @@
-const CACHE_VERSION = "k3981-v1";
+const CACHE_VERSION = "k3981-v5";
 const APP_SHELL = [
   "./",
   "./index.html",

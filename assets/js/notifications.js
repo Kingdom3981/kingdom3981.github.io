@@ -10,27 +10,35 @@ export function renderAlertPanels() {
 function renderAlertPanel(panel) {
   const context = panel.dataset.context || "kingdom";
   const status = createEl("p", { class: "status-line", role: "status" });
-  const kingdomCheck = createEl("input", { type: "checkbox", id: `${context}-kingdom-alerts`, checked: "" });
-  const baulerCheck = createEl("input", { type: "checkbox", id: `${context}-bauler-alerts` });
-  if (context === "bauler") baulerCheck.checked = true;
+  const preferences = [
+    ["kingdom", "Kingdom/Event alerts"],
+    ["war", "War alerts"],
+    ["bauler", "Bauler run reminders"],
+    ["codes", "Codes"]
+  ];
+  const checks = Object.fromEntries(
+    preferences.map(([key, label]) => {
+      const input = createEl("input", { type: "checkbox", id: `${context}-${key}-alerts`, checked: "" });
+      if (context === "bauler") input.checked = key === "bauler";
+      return [key, { input, label }];
+    })
+  );
 
   const enableButton = createEl("button", { type: "button", class: "primary", text: "Enable alerts" });
-  const guidance = createEl("p", {
-    text: browserGuidance()
-  });
-
   panel.replaceChildren(
-    createEl("div", { class: "preference-row" }, [
-      createEl("label", { class: "check-line", for: kingdomCheck.id }, [kingdomCheck, "Kingdom and war alerts"]),
-      createEl("label", { class: "check-line", for: baulerCheck.id }, [baulerCheck, "Bauler run reminders"])
-    ]),
+    createEl(
+      "div",
+      { class: "preference-row" },
+      preferences.map(([key]) =>
+        createEl("label", { class: "check-line", for: checks[key].input.id }, [checks[key].input, checks[key].label])
+      )
+    ),
     createEl("div", { class: "button-row" }, [enableButton]),
-    status,
-    guidance
+    status
   );
 
   if (!SITE_CONFIG.notifications.appId) {
-    status.textContent = "Alerts are not configured yet. The site is usable, but notification success will not be claimed.";
+    status.textContent = "";
     enableButton.disabled = true;
     return;
   }
@@ -59,10 +67,11 @@ function renderAlertPanel(panel) {
         return;
       }
 
-      OneSignal.User.addTags({
-        [SITE_CONFIG.notifications.preferenceTags.kingdom]: kingdomCheck.checked ? "true" : "false",
-        [SITE_CONFIG.notifications.preferenceTags.bauler]: baulerCheck.checked ? "true" : "false"
-      });
+      OneSignal.User.addTags(
+        Object.fromEntries(
+          preferences.map(([key]) => [SITE_CONFIG.notifications.preferenceTags[key], checks[key].input.checked ? "true" : "false"])
+        )
+      );
 
       status.textContent = "Alerts enabled. Preference tags were submitted to OneSignal.";
     } catch (error) {

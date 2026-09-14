@@ -19,7 +19,9 @@ export const SITE_CONFIG = {
     serviceWorkerScope: "./push/onesignal/",
     preferenceTags: {
       kingdom: "alert_kingdom",
-      bauler: "alert_bauler"
+      war: "alert_war",
+      bauler: "alert_bauler",
+      codes: "alert_codes"
     }
   }
 };

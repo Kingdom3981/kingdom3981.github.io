@@ -15,12 +15,12 @@
     "failures": []
   },
   "settings": {
-    "migrationStatus": "Closed",
+    "migrationStatus": "Open",
     "currentSeed": "Seed D",
     "targetSeed": "Seed D",
-    "discordUrl": "",
-    "homepageIntro": "A polished public hub for Kingdom 3981 members and prospective migrants.",
-    "migrationNote": "Demo default. Configure Open or Closed from the Kingdom Settings sheet before enabling live mode.",
+    "discordUrl": "https://kingdom3981.github.io/index.html#",
+    "homepageIntro": "",
+    "migrationNote": "",
     "whatWeOffer": [
       "Fixed MGE during off-season",
       "Fixed 20 GH events during off-season",
@@ -33,7 +33,5 @@
       "Warriors"
     ]
   },
-  "warnings": [
-    "Migration status is Closed as a documented demo default only."
-  ]
+  "warnings": []
 }
