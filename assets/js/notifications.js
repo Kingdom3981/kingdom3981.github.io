@@ -11,7 +11,7 @@
           const worker = new URL('push/onesignal/OneSignalSDKWorker.js', base);
           await OneSignal.init({
             appId: SITE_CONFIG.oneSignalAppId,
-            serviceWorkerPath: worker.pathname,
+            serviceWorkerPath: worker.pathname.replace(/^\/+/, ''),
             serviceWorkerParam: {scope: new URL('./',worker).pathname},
             notifyButton: {enable:false},
             promptOptions: {slidedown:{prompts:[{type:'push',autoPrompt:false}]}}
