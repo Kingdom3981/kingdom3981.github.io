@@ -57,7 +57,11 @@ const translations = {
     "routeAlt": "Bauler route image",
     "inspect": "Open image",
     "titleHome": "Kingdom 3981 | Rise of Kingdoms",
-    "titleBauler": "Bauler Runs | Kingdom 3981"
+    "titleBauler": "Bauler Runs | Kingdom 3981",
+    "formation": "Formation",
+    "talents1": "Talent tree 1",
+    "talents2": "Talent tree 2",
+    "talents3": "Talent tree 3"
   },
   "ru": {
     "home": "Главная",
@@ -117,7 +121,11 @@ const translations = {
     "routeAlt": "Изображение маршрута Баулера",
     "inspect": "Открыть изображение",
     "titleHome": "Королевство 3981 | Rise of Kingdoms",
-    "titleBauler": "Забеги Баулера | Королевство 3981"
+    "titleBauler": "Забеги Баулера | Королевство 3981",
+    "formation": "Построение",
+    "talents1": "Дерево талантов 1",
+    "talents2": "Дерево талантов 2",
+    "talents3": "Дерево талантов 3"
   },
   "es": {
     "home": "Inicio",
@@ -177,7 +185,11 @@ const translations = {
     "routeAlt": "Imagen de la ruta de Bauler",
     "inspect": "Abrir imagen",
     "titleHome": "Reino 3981 | Rise of Kingdoms",
-    "titleBauler": "Rutas de Bauler | Reino 3981"
+    "titleBauler": "Rutas de Bauler | Reino 3981",
+    "formation": "Formación",
+    "talents1": "Árbol de talentos 1",
+    "talents2": "Árbol de talentos 2",
+    "talents3": "Árbol de talentos 3"
   },
   "vi": {
     "home": "Trang chủ",
@@ -237,6 +249,10 @@ const translations = {
     "routeAlt": "Hình lộ trình Bauler",
     "inspect": "Mở hình ảnh",
     "titleHome": "Vương quốc 3981 | Rise of Kingdoms",
-    "titleBauler": "Chạy Bauler | Vương quốc 3981"
+    "titleBauler": "Chạy Bauler | Vương quốc 3981",
+    "formation": "Đội hình",
+    "talents1": "Cây tài năng 1",
+    "talents2": "Cây tài năng 2",
+    "talents3": "Cây tài năng 3"
   }
 };

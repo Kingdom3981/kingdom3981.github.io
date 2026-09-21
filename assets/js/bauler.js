@@ -24,19 +24,20 @@ function nextBaulerRun(now, hours = SITE_CONFIG.baulerHoursUTC) {
   tick(); setInterval(tick,1000); document.addEventListener('visibilitychange', tick);
   const route = document.querySelector('#route-image');
   route.src = SITE_CONFIG.routeImage;
-  // Remove fixed dimensions on a replacement so its natural proportions govern layout.
-  if (!SITE_CONFIG.routeImage.includes('route-placeholder')) {
+  if (SITE_CONFIG.routeDimensions) {
+    route.width = SITE_CONFIG.routeDimensions.width;
+    route.height = SITE_CONFIG.routeDimensions.height;
+  } else {
     route.removeAttribute('width'); route.removeAttribute('height');
-    document.querySelector('.route figcaption').hidden = true;
   }
   const entries = [{src:SITE_CONFIG.routeImage,key:'routeAlt'}, ...SITE_CONFIG.usefulImages];
   const gallery = document.querySelector('#gallery');
   SITE_CONFIG.usefulImages.forEach((item,i) => {
     const figure = document.createElement('figure'), button = document.createElement('button'), img = document.createElement('img'), caption = document.createElement('figcaption');
-    button.className = 'image-button'; button.dataset.i18nAria = 'inspect';
-    img.src = item.src; img.loading = 'lazy'; img.dataset.i18nAlt = item.key;
+    button.className = 'image-button'; button.dataset.i18nAria = item.key;
+    img.src = item.src; img.loading = 'lazy'; img.decoding = 'async'; img.dataset.i18nAlt = item.key;
+    if (item.width && item.height) { img.width = item.width; img.height = item.height; }
     const title = document.createElement('span'); title.dataset.i18n = item.key; caption.append(title);
-    if (/guide-\d\.svg$/.test(item.src)) { const note = document.createElement('small'); note.dataset.i18n = 'placeholder'; caption.append(note); }
     button.append(img); figure.append(button, caption); gallery.append(figure);
     button.addEventListener('click', () => open(i+1));
   });
