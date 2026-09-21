@@ -1,5 +1,0 @@
-Event ID,Enabled,Title,Message,UTC Date,UTC Time,Recurrence,Reminder Minutes,Destination,Audience
-bauler-run-1,TRUE,Bauler Run Soon,Bauler Runs start in 15 minutes.,,13:00,daily,15,./bauler-runs.html,bauler
-bauler-run-2,TRUE,Bauler Run Soon,Bauler Runs start in 15 minutes.,,21:00,daily,15,./bauler-runs.html,bauler
-kvk-call-example,FALSE,Kingdom Alert,Replace this disabled row with a real one-time alert.,2026-12-01,18:00,once,30,./,test
-weekday-example,FALSE,Weekday Reminder,Replace this disabled row with a selected weekday reminder.,,18:00,"weekdays:mon,wed",30,./,kingdom
