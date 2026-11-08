@@ -7,9 +7,23 @@
   let opener, previousOverflow;
   function setZoom(actual) {
     viewport.classList.toggle('actual-size', actual);
-    zoom.textContent = actual ? 'Fit to width' : 'Actual size';
+    zoom.textContent = t(actual ? 'guideFitWidth' : 'guideActualSize');
     zoom.setAttribute('aria-pressed', String(actual));
   }
+  function updateLanguage() {
+    setZoom(viewport.classList.contains('actual-size'));
+    if (opener && dialog.open) {
+      image.alt = opener.querySelector('img').alt;
+      document.querySelector('#guide-caption').textContent = image.alt;
+    }
+    const title = document.querySelector('meta[property="og:title"]');
+    if (title) title.content = document.title;
+    document.querySelectorAll('meta[name="description"], meta[property="og:description"]').forEach(meta => {
+      meta.content = t('description' + document.body.dataset.page);
+    });
+  }
+  document.addEventListener('languagechange', updateLanguage);
+  updateLanguage();
   document.querySelectorAll('.guide-image').forEach(link => {
     link.addEventListener('click', event => {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
